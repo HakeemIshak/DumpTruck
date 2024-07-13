@@ -8,3 +8,7 @@ Icon={/opt/ugene-1.11.5/icon.svg}
 Terminal=false
 Type=Application
 Categories=Utility;Development;
+
+# mv name.desktop ~/.local/share/applications/
+# chmod +x ~/.local/share/applications/name.desktop
+# sudo update-desktop-database
