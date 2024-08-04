@@ -1,0 +1,29 @@
+{
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": false,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+    "prettier.semi": true,
+    "prettier.tabWidth": 4,
+    "prettier.bracketSpacing": false,
+
+    "security.workspace.trust.untrustedFiles": "open",
+    "gopls": {"ui.semanticTokens": true},
+
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[svelte]": {
+        "editor.defaultFormatter": "svelte.svelte-vscode"
+    },
+    "[astro]": {
+        "editor.formatOnSave": false,
+        "editor.tabSize": 4,
+        "editor.insertSpaces": false,
+        "editor.indentSize": "tabSize",
+        "editor.defaultFormatter": "astro-build.astro-vscode"
+    }
+}
