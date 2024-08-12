@@ -1,15 +1,21 @@
 {
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
+    "editor.fontWeight": "400",
     "editor.tabSize": 4,
     "editor.insertSpaces": false,
+    "editor.cursorBlinking": "solid",
+    "editor.cursorStyle": "block",
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
 
     "prettier.semi": true,
     "prettier.tabWidth": 4,
     "prettier.bracketSpacing": false,
+    "prettier.quoteProps": "consistent",
 
+    "diffEditor.ignoreTrimWhitespace": true,
+    "workbench.statusBar.visible": true,
     "security.workspace.trust.untrustedFiles": "open",
     "gopls": {"ui.semanticTokens": true},
 
