@@ -1,35 +1,70 @@
 {
-    "editor.fontFamily": "Fira Code",
-    "editor.fontLigatures": true,
-    "editor.fontWeight": "400",
-    "editor.tabSize": 4,
-    "editor.insertSpaces": false,
+    // Main Window
+    "workbench.startupEditor": "none",
+    "workbench.statusBar.visible": true,
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.restoreViewState": true,
+    "workbench.colorCustomizations": {
+        "editor.lineHighlightBackground": "#223851"
+    },
+
+    "window.title": "${activeEditorMedium}",
+    "window.customTitleBarVisibility": "never",
+
+    // Editor
     "editor.cursorBlinking": "solid",
     "editor.cursorStyle": "block",
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.stickyScroll.enabled": false,
+    "editor.fontFamily": "Hack Nerd Font Mono",
+    "editor.fontLigatures": true,
+    "editor.fontWeight": 400,
+    "editor.fontSize": 14,
+    "editor.tabSize": 4,
+    "editor.lineHeight": 0,
+    "editor.insertSpaces": true,
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.renderLineHighlight": "all",
+    "editor.inlineSuggest.enabled": true,
 
+    // Others
+    "files.trimTrailingWhitespace": true,
+    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "security.workspace.trust.untrustedFiles": "open",
+
+    // Prettier
     "prettier.semi": true,
     "prettier.tabWidth": 4,
     "prettier.bracketSpacing": false,
     "prettier.quoteProps": "consistent",
 
-    "diffEditor.ignoreTrimWhitespace": true,
-    "workbench.statusBar.visible": true,
-    "security.workspace.trust.untrustedFiles": "open",
-    "gopls": {"ui.semanticTokens": true},
+    // Syntax Highlighting
+    "files.associations": {
+        ".env*": "makefile"
+    },
 
+    // Files Association
+    "gopls": {"ui.semanticTokens": true},
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[svelte]": {
         "editor.defaultFormatter": "svelte.svelte-vscode"
     },
     "[astro]": {
-        "editor.formatOnSave": false,
-        "editor.tabSize": 4,
-        "editor.insertSpaces": false,
-        "editor.indentSize": "tabSize",
         "editor.defaultFormatter": "astro-build.astro-vscode"
     }
 }
