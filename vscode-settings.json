@@ -15,7 +15,7 @@
     "editor.cursorBlinking": "solid",
     "editor.cursorStyle": "block",
     "editor.stickyScroll.enabled": false,
-    "editor.fontFamily": "Hack Nerd Font Mono",
+    "editor.fontFamily": "0xProto Nerd Font",
     "editor.fontLigatures": true,
     "editor.fontWeight": 400,
     "editor.fontSize": 14,
@@ -26,9 +26,11 @@
     "editor.renderLineHighlight": "all",
     "editor.inlineSuggest.enabled": true,
 
+    // Terminal
+    "terminal.integrated.fontFamily": "Hack Nerd Font",
+    "terminal.integrated.fontSize": 11,
+
     // Others
-    "files.trimTrailingWhitespace": true,
-    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "security.workspace.trust.untrustedFiles": "open",
@@ -39,12 +41,13 @@
     "prettier.bracketSpacing": false,
     "prettier.quoteProps": "consistent",
 
-    // Syntax Highlighting
+    // Files
+    "files.trimTrailingWhitespace": true,
     "files.associations": {
         ".env*": "makefile"
     },
 
-    // Files Association
+    // Formatter
     "gopls": {"ui.semanticTokens": true},
     "[javascriptreact]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
