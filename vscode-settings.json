@@ -18,7 +18,7 @@
     "editor.fontFamily": "0xProto Nerd Font",
     "editor.fontLigatures": true,
     "editor.fontWeight": 400,
-    "editor.fontSize": 14,
+    "editor.fontSize": 11,
     "editor.tabSize": 4,
     "editor.lineHeight": 0,
     "editor.insertSpaces": true,
@@ -27,8 +27,8 @@
     "editor.inlineSuggest.enabled": true,
 
     // Terminal
-    "terminal.integrated.fontFamily": "Hack Nerd Font",
-    "terminal.integrated.fontSize": 11,
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+    "terminal.integrated.fontSize": 10,
 
     // Others
     "explorer.confirmDelete": false,
@@ -52,22 +52,21 @@
     "[javascriptreact]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "[svelte]": {
-        "editor.defaultFormatter": "svelte.svelte-vscode"
+    "terminal.integrated.enableMultiLinePasteWarning": "always",
+    "chat.commandCenter.enabled": false,
+    "workbench.colorTheme": "Dracula Theme",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "[astro]": {
-        "editor.defaultFormatter": "astro-build.astro-vscode"
-    }
+
+    // Disable all telemetry
+    "telemetry.telemetryLevel": "off",
+    "telemetry.feedback.enabled": false,
+    "gitlens.telemetry.enabled": false,
 }
