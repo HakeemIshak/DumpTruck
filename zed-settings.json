@@ -7,21 +7,57 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    // UI & Panel
+    "collaboration_panel": {
+        "button": false
+    },
+    "outline_panel": {
+        "button": false
+    },
+    "agent": {
+        "button": false
+    },
+    "debugger": {
+        "button": false
+    },
+    "project_panel": {
+        "dock": "right"
+    },
+    "git_panel": {
+        "dock": "left",
+        "status_style":"label_color",
+        "sort_by_path": true
+    },
+    "gutter": {
+        "breakpoints": false
+    },
+
+    // Behaviour
     "show_edit_predictions": false,
+
+    // Telemetry
     "telemetry": {
         "metrics": false,
         "diagnostics": false
     },
 
+    // Formatting
     "tab_size": 4,
     "format_on_save": "off",
 
-    "ui_font_size": 10,
-    "buffer_font_size": 10,
-    "icon_theme": "Catppuccin Frappé",
+    // Styling
+    "scrollbar": {
+        "show": "never"
+    },
+    "minimap": {
+        "show": "always"
+    },
+    "cursor_shape": "block",
+    "ui_font_size": 14,
     "ui_font_family": "FiraCode Nerd Font",
+    "buffer_font_size": 10,
     "buffer_font_family": "FiraCode Nerd Font",
-
+    "icon_theme": "Catppuccin Frappé",
     "theme": {
         "mode": "system",
         "light": "One Light",
