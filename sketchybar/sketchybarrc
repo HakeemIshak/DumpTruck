@@ -1,0 +1,128 @@
+#!/bin/bash
+
+# SketchyBar Configuration
+# A customized status bar setup with Aerospace workspace integration
+#
+# Features:
+# - Apple menu with dropdown
+# - Aerospace workspace indicators with app icons
+# - Current app display
+# - Media info (Spotify)
+# - Meeting notifications
+# - System info (clock, volume, battery)
+
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+
+##### Bar Appearance #####
+sketchybar --bar position=top \
+               height=33 \
+               blur_radius=5 \
+               padding_left=10 \
+               padding_right=10 \
+               display=all
+
+##### Default Styling #####
+default=(
+  # Font configuration
+  icon.font="0xProto Nerd Font:Bold:17.0"
+  label.font="0xProto Nerd Font:Bold:14.0"
+
+  # Colors
+  icon.color=0xffffffff
+  label.color=0xffffffff
+
+  # Padding
+  icon.padding_left=4
+  icon.padding_right=4
+  label.padding_left=4
+  label.padding_right=4
+
+  # Background
+  background.corner_radius=6
+)
+sketchybar --default "${default[@]}"
+
+##### Left Items #####
+# Apple menu with dropdown
+source "$CONFIG_DIR/apple_menu.sh"
+
+# Aerospace workspace indicators with app icons
+source "$CONFIG_DIR/aerospace_workspaces.sh"
+
+# Current active application
+current_app=(
+  icon.drawing=off
+
+  label.color=0xffffffff
+  label.padding_left=8
+  label.padding_right=8
+
+  background.color=0xff2a2a2a
+  background.height=24
+  background.border_width=1
+  background.border_color=0xff444444
+  background.padding_left=4
+  background.padding_right=4
+
+  script="$PLUGIN_DIR/front_app.sh"
+)
+
+sketchybar --add item current_app left \
+           --set current_app "${current_app[@]}" \
+           --subscribe current_app front_app_switched
+
+##### Right Items #####
+# Shared styling for right-side items
+right_item_base=(
+  background.color=0xff2a2a2a
+  background.height=24
+  background.border_width=1
+  background.border_color=0xff444444
+  background.padding_left=4
+)
+
+# For items with labels (clock)
+right_item_style=(
+  "${right_item_base[@]}"
+  label.padding_left=0
+  icon.padding_left=0
+)
+
+# For icon-only items (volume, battery, media, meetings)
+right_item_icon_style=(
+  "${right_item_base[@]}"
+)
+
+# Add all right items
+sketchybar --add item media right \
+           --set media update_freq=2 \
+                       script="$PLUGIN_DIR/media.sh" \
+                       "${right_item_icon_style[@]}" \
+           \
+           --add item clock right \
+           --set clock update_freq=30 \
+                       script="$PLUGIN_DIR/clock.sh" \
+                       "${right_item_style[@]}" \
+           \
+           --add item volume right \
+           --set volume script="$PLUGIN_DIR/volume.sh" \
+                        "${right_item_icon_style[@]}" \
+           --subscribe volume volume_change \
+           \
+           --add item battery right \
+           --set battery update_freq=120 \
+                         script="$PLUGIN_DIR/battery.sh" \
+                         "${right_item_icon_style[@]}" \
+           --subscribe battery system_woke power_source_change \
+           \
+           --add item meetings right \
+           --set meetings update_freq=300 \
+                         script="$PLUGIN_DIR/meetings.sh" \
+                         "${right_item_icon_style[@]}" \
+
+##### Initialize #####
+# Force initial script execution
+sketchybar --update
+
+# Start background processes
+"$PLUGIN_DIR/aerospace_monitor.sh" &
